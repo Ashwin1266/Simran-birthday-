@@ -168,6 +168,9 @@ $('document').ready(function(){
 		$(this).fadeOut('slow');
 		$('.cake').fadeOut('fast').promise().done(function(){
 			$('.message').fadeIn('slow');
+		 // Hide balloons and show Simran photo section
+           $(".balloons").fadeOut(1000);
+           $("#simran-photo-section").fadeIn(1500);
 		});
 		
 		var i;
