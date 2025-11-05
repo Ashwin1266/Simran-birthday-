@@ -164,7 +164,7 @@ $('document').ready(function(){
 		});
 	});
 
-	// Hide balloons and show Simran photo
+	// Hide balloons and show simran photo
 $("#balloon-container").fadeOut(1000, function() {
     $("#simran-section").fadeIn(1500);
 }); 
