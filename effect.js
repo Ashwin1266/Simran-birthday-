@@ -140,6 +140,10 @@ $('document').ready(function(){
 
 		
 	$('#wish_message').click(function(){
+    // balloons stop & reposition
+    ...
+    $(this).fadeOut('slow').delay(3000).promise().done(function(){
+        $('#story').fadeIn('slow');
 		 vw = $(window).width()/2;
 
 		$('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
@@ -162,29 +166,27 @@ $('document').ready(function(){
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
 			$('#story').fadeIn('slow');
 		});
-	});
-
-	// Hide balloons and show simran photo
-$("#balloon-container").fadeOut(1000, function() {
-    $("#simran-section").fadeIn(1500);
-}); 
+	}); 
 	
 	$('#story').click(function(){
 		$(this).fadeOut('slow');
 		$('.cake').fadeOut('fast').promise().done(function(){
 			$('.message').fadeIn('slow');
+		// Hide balloons and show simran photo
+           $("#balloon-container").fadeOut(1000, function() {
+           $("#simran-section").fadeIn(1500);
        });
 		
 		var i;
 
 		function msgLoop (i) {
-			$("p:nth-child("+i+")").fadeOut('slow').delay(800).promise().done(function(){
-			i=i+1;
-			$("p:nth-child("+i+")").fadeIn('slow').delay(1000);
-			if(i==50){
-				$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
-					$('.cake').fadeIn('fast');
-				});
+			// Hide photo and show balloons + cake
+$('#simran-section').fadeOut(1000, function(){
+    $("#balloon-container").fadeIn(1500);
+    $('.cake').fadeIn(1500);
+    // If you have a function to light candle
+    $('.fuego').fadeIn('slow');
+});
 				
 			}
 			else{
